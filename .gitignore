@@ -10,6 +10,8 @@
 *.orig
 *.a
 *.o
+*.su
+*.depend.*
 *~
 *.swp
 *.patch
