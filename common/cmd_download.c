@@ -96,7 +96,7 @@ int do_download(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
 	dl_cmd_register(BSL_CMD_READ_REFINFO, dl_cmd_read_ref_info);
 
 	usb_init(0);
-	dl_send_ack (BSL_INCOMPATIBLE_PARTITION);
+//	dl_send_ack (BSL_INCOMPATIBLE_PARTITION);
 	/* enter command handler */
 	dl_cmd_handler();
         return 0;

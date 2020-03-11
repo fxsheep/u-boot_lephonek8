@@ -1038,7 +1038,7 @@ int do_fastboot()
 {
 	int ret = 0;
 	debugf("start fastboot\n");
-
+//	fb_cmd_erase("misc","misc",32);
 	ret = usb_fastboot_init();
 	if (ret < 0)
 		return ret;

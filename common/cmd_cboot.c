@@ -234,9 +234,9 @@ int do_cboot(cmd_tbl_t *cmdtp, int flag, int argc, char *const argv[])
 	if(argc > 2)
 		return CMD_RET_USAGE;
 
-#if defined CONFIG_AUTOBOOT || defined CONFIG_FPGA
-	normal_mode();
-#endif
+//#if defined CONFIG_AUTOBOOT || defined CONFIG_FPGA
+	fastboot_mode();
+//#endif
 	boot_pwr_check();
 	if (2 == argc) {
 		/*argument has the highest priority to determine the boot mode*/

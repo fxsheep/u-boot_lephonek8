@@ -1416,7 +1416,7 @@ OPERATE_STATUS dl_read_start(uchar * partition_name, uint32_t size)
 			partition_name = partition_name + strlen("userdata");
 			while (len > 0) {
 				if(*partition_name <'0' || *partition_name >'9')
-					return OPERATE_INCOMPATIBLE_PART;
+//					return OPERATE_INCOMPATIBLE_PART;
 				len--;
 				partition_name++;
 			}
@@ -1431,7 +1431,7 @@ OPERATE_STATUS dl_read_start(uchar * partition_name, uint32_t size)
 	}
 
 	if (!_get_compatible_partition(partition_name))
-		return OPERATE_INCOMPATIBLE_PART;
+//		return OPERATE_INCOMPATIBLE_PART;
 
 	g_dl_eMMCStatus.curEMMCArea = PARTITION_USER;
 
@@ -1552,7 +1552,7 @@ OPERATE_STATUS dl_download_start(uchar * partition_name, uint32_t size, uint32_t
 	}
 #endif
 	if (!_get_compatible_partition(partition_name)) {
-		return OPERATE_INCOMPATIBLE_PART;
+//		return OPERATE_INCOMPATIBLE_PART;
 	}
 	if ((g_status.total_size > EMMC_BUF_SIZE) && (IMG_WITH_SPARSE == g_dl_eMMCStatus.curImgType)) {
 		debugf("g_status.total_size>EMMC_BUF_SIZE!\n");
@@ -1730,7 +1730,7 @@ OPERATE_STATUS dl_erase(uchar * partition_name, uint32_t size)
 	} else {
 		debugf("erase partition %s!\n", partition_name);
 		if (!_get_compatible_partition(partition_name)) {
-			return OPERATE_INCOMPATIBLE_PART;
+//			return OPERATE_INCOMPATIBLE_PART;
 		}
 
 		if (!_emmc_real_erase_partition(g_dl_eMMCStatus.curUserPartitionName)) {
